@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8"><title>QUỐC THẮNG DRIVER</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Dán vào trong file index.html -->
+<div class="control-panel">
+    <button onclick="startTracking()" style="background: #00ff41; color: black; padding: 10px; border: none; border-radius: 5px; font-weight: bold;">
+        BẮT ĐẦU ĐO
+    </button>
+    <button onclick="stopTracking()" style="background: #ff4500; color: white; padding: 10px; border: none; border-radius: 5px; font-weight: bold;">
+        DỪNG & TRỪ TIỀN
+    </button>
+</div>
+
+    <div id="app">
+        <div class="profile"><img src="https://via.placeholder.com/100" id="avatar" onclick="document.getElementById('fileInput').click()"
+        ><input type="file" id="fileInput" accept="image/*" style="display:none" onchange="changeAvatar(event)"></div>
+     <h1>power by quoc thang 2007</h1> 
+        <div id="clock">00:00:00</div>
+        <button id="btnStatus" onclick="toggleStatus()">TRẠNG THÁI: OFF</button>
+        <div id="workTimer">00:00:00</div>
+        <h1 id="totalDisplay" onclick="toggleHistory()">0 VNĐ</h1>
+        <div class="gas-section"><input type="number" id="startKm" placeholder="Km đầu"><input type="number" id="endKm" placeholder="Km cuối"><button onclick="calcVisionGas()">TÍNH XĂNG</button></div>
+        <div class="quick-actions"><button onclick="addEntry('Xăng', 50000, 'Chi')">⛽ Xăng</button><button onclick="addEntry('Cafe', 25000, 'Chi')">☕ Cafe</button><button onclick="addEntry('Thuốc', 25000, 'Chi')">🚬 Thuốc</button></div>
+        <div class="manual-entry"><input type="number" id="amtInput" placeholder="Số tiền..."><button class="btn-in" onclick="addEntry('Thu', document.getElementById('amtInput').value, 'Thu')">THU (+)</button><button class="btn-out" onclick="addEntry('Chi', document.getElementById('amtInput').value, 'Chi')">CHI (-)</button></div>
+        <div class="debt-section"><button onclick="addDebt('FE Credit', 2285000)">NỢ FE</button><button onclick="addDebt('Momo', 1850000)">NỢ MOMO</button></div>
+        <ul id="historyList" style="display:block;"></ul>
+    </div><script src="script.js"></script>
+</body>
+</html>
